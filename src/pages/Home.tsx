@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
       <Head>
-        <title>Weather Station Dashboard</title>
+        <title>Road Weather Station Dashboard IPA 249</title>
         <meta name="description" content="ESP8266 Weather Sensor Dashboard" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -57,8 +57,59 @@ export default function Home() {
       <main className="p-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold text-blue-900 mb-8 text-center">
-            Weather Station Dashboard
+            Road Weather Station Dashboard IPA 249
           </h1>
+
+          <div className="overflow-x-auto rounded border border-gray-900 shadow-sm my-6">
+            <table className="min-w-full divide-y-2 divide-gray-900">
+              <thead className="ltr:text-left rtl:text-right">
+                <tr className="*:font-medium *:text-gray-900">
+                  <th className="px-3 py-2 whitespace-nowrap">NO</th>
+                  <th className="px-3 py-2 whitespace-nowrap">Name</th>
+                  <th className="px-3 py-2 whitespace-nowrap">Roll.NO</th>
+                </tr>
+              </thead>
+
+              <tbody className="divide-y divide-gray-900">
+                <tr className="*:text-gray-900 *:first:font-medium">
+                  <td className="px-3 py-2 whitespace-nowrap">1</td>
+                  <td className="px-3 py-2 whitespace-nowrap">A N V MUKUNDA RAO</td>
+                  <td className="px-3 py-2 whitespace-nowrap">20241CSE0114</td>
+                </tr>
+
+                <tr className="*:text-gray-900 *:first:font-medium">
+                  <td className="px-3 py-2 whitespace-nowrap">2</td>
+                  <td className="px-3 py-2 whitespace-nowrap">AISHWARYA SREE V</td>
+                  <td className="px-3 py-2 whitespace-nowrap">20241CSE0115</td>
+                </tr>
+
+                <tr className="*:text-gray-900 *:first:font-medium">
+                  <td className="px-3 py-2 whitespace-nowrap">3</td>
+                  <td className="px-3 py-2 whitespace-nowrap">MOULYA V</td>
+                  <td className="px-3 py-2 whitespace-nowrap">20241CSE0116</td>
+                </tr>
+
+                <tr className="*:text-gray-900 *:first:font-medium">
+                  <td className="px-3 py-2 whitespace-nowrap">4</td>
+                  <td className="px-3 py-2 whitespace-nowrap">VISHAL A MASHALDI</td>
+                  <td className="px-3 py-2 whitespace-nowrap">20241CSE0118</td>
+                </tr>
+
+                <tr className="*:text-gray-900 *:first:font-medium">
+                  <td className="px-3 py-2 whitespace-nowrap">5</td>
+                  <td className="px-3 py-2 whitespace-nowrap">SAMARTH S</td>
+                  <td className="px-3 py-2 whitespace-nowrap">20241CSE0119</td>
+                </tr>
+
+                <tr className="*:text-gray-900 *:first:font-medium">
+                  <td className="px-3 py-2 whitespace-nowrap">6</td>
+                  <td className="px-3 py-2 whitespace-nowrap">D NIKHIL REDDY</td>
+                  <td className="px-3 py-2 whitespace-nowrap">20241EVL0020</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
 
           {error && (
             <div className="bg-red-100 border-l-4 border-red-500 p-4 mb-6 rounded">
@@ -78,12 +129,12 @@ export default function Home() {
               ) : (
                 <Sun className="h-24 w-24 text-yellow-500 mx-auto" />
               )}
-              <h2 className="text-2xl font-semibold mt-4">
+              <h2 className="text-2xl text-black font-semibold mt-4">
                 {!data
                   ? "Loading..."
                   : data.raining
-                  ? "Raining 🌧️"
-                  : "Dry ☀️"}
+                    ? "Raining 🌧️"
+                    : "Dry ☀️"}
               </h2>
               <p className="text-gray-600 text-sm mt-2">
                 Last updated: {formatTime(lastUpdated)}
@@ -105,8 +156,8 @@ export default function Home() {
                     {data?.temperature !== null && data?.temperature !== undefined
                       ? `${data.temperature.toFixed(1)} °C`
                       : isLoading
-                      ? "Loading..."
-                      : "N/A"}
+                        ? "Loading..."
+                        : "N/A"}
                   </p>
                 </div>
               </div>
@@ -124,8 +175,8 @@ export default function Home() {
                     {data?.humidity !== null && data?.humidity !== undefined
                       ? `${data.humidity.toFixed(1)}%`
                       : isLoading
-                      ? "Loading..."
-                      : "N/A"}
+                        ? "Loading..."
+                        : "N/A"}
                   </p>
                 </div>
               </div>
